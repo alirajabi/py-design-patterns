@@ -12,6 +12,7 @@ class Car(object):
 
     def clone(self, **attr):
         """Clone a prototype and update inner attributes dictionary"""
+        # important
         obj = copy.deepcopy(self)
         obj.__dict__.update(attr)
         return obj
@@ -21,6 +22,7 @@ class PrototypeDispatcher:
     def __init__(self):
         self._objects = {}
 
+    @property
     def get_objects(self):
         """Get all objects"""
         return self._objects
@@ -46,4 +48,9 @@ if __name__ == '__main__':
     dispatcher.register_object('mbw_x1_plus', mbw_x1_plus)
     dispatcher.register_object('mbw_taxi', mbw_taxi)
 
-    print([{'Name': name, 'Engine': car.engine, 'Color': car.color} for name, car in dispatcher.get_objects().items()])
+    if id(dispatcher.get_objects.get('bmw_x1').color) == id(dispatcher.get_objects.get('mbw_x1_plus').color):
+        print "Same"
+    else:
+        print "Different car obj"
+
+    print([{'Name': name, 'Engine': car.engine, 'Color': car.color} for name, car in dispatcher.get_objects.items()])
