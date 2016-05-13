@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
 class Borg:
     __shared_state = {}
 
@@ -14,6 +15,7 @@ class Borg:
 
 class YourBorg(Borg):
     pass
+
 
 if __name__ == '__main__':
     rm1 = Borg()
@@ -38,19 +40,8 @@ if __name__ == '__main__':
     print('rm1: {0}'.format(rm1))
     print('rm2: {0}'.format(rm2))
     print('rm3: {0}'.format(rm3))
-    
-    #important
-    print ('rm1 and rm2 are same ? \n {0}'.format(id(rm1)==id(rm2)))
 
-### OUTPUT ###
-# rm1: Running
-# rm2: Running
-# rm1: Zombie
-# rm2: Zombie
-# rm1 id: 140732837899224
-# rm2 id: 140732837899296
-# rm1: Init
-# rm2: Init
-# rm3: Init
-# False
+    # important
+    print ('rm1 and rm2 are same ? \n {0}'.format(id(rm1) == id(rm2)))
+
 # Source: https://github.com/faif/python-patterns/blob/master/borg.py
