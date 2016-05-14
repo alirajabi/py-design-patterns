@@ -19,19 +19,19 @@ class FlyingBehavior():
     def invoke(self):
         return 'default flying behavior'
 
-class SprintBehavior():
+class SprintBehavior(RunningBehavior):
     def invoke(self):
         return 'sprint behavior: fast but energy consuming'
 
-class WalkingBehavior():
+class WalkingBehavior(RunningBehavior):
     def invoke(self):
         return 'walk behavior: slow but energy preserving'
 
-class UnableToFlyBehavior():
+class UnableToFlyBehavior(FlyingBehavior):
     def invoke(self):
         return 'Not able to fly'
 
-class LowAltitudeFlyingBehavior():
+class LowAltitudeFlyingBehavior(FlyingBehavior):
     def invoke(self):
         return 'Flying low: dangerous but less visible'
         
