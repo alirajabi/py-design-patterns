@@ -43,12 +43,13 @@ class PetShop:
         assert 0, "Bad pet creation: " + type
 
 
-d = PetShop.get_pet(Animal.Dog)
+if __name__ == "__main__":
+    dog = PetShop.get_pet(Animal.Dog)
 
-print(d.speak())
+    print(dog.speak())
 
-c = PetShop.get_pet(Animal.Cat)
+    cat = PetShop.get_pet(Animal.Cat)
 
-print(c.speak())
+    print(cat.speak())
 
-# print (PetShop.get_pet('Parrot'))
+    # print (PetShop.get_pet('Parrot'))

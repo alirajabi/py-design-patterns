@@ -6,26 +6,17 @@ import random
 
 # Stuff that our factory makes
 
-class DogFood:
-    def __init__(self):
-        pass
-
+class DogFood(object):
     def __str__(self):
         return 'Dog Food'
 
 
-class CatFood:
-    def __init__(self):
-        pass
-
+class CatFood(object):
     def __str__(self):
         return 'Cat Food'
 
 
-class Dog:
-    def __init__(self):
-        pass
-
+class Dog(object):
     def speak(self):
         return "Woof!"
 
@@ -33,10 +24,7 @@ class Dog:
         return "Dog"
 
 
-class Cat:
-    def __init__(self):
-        pass
-
+class Cat(object):
     def speak(self):
         return "Meow!"
 
@@ -46,10 +34,7 @@ class Cat:
 
 # Factory classes
 
-class DogFactory:
-    def __init__(self):
-        pass
-
+class DogFactory(object):
     def get_pet(self):
         return Dog()
 
@@ -57,10 +42,7 @@ class DogFactory:
         return DogFood()
 
 
-class CatFactory:
-    def __init__(self):
-        pass
-
+class CatFactory(object):
     def get_pet(self):
         return Cat()
 
@@ -83,6 +65,8 @@ class PetShop:
         print("We also have {}".format(self.pet_factory.get_food()))
 
 
-for i in range(3):
-    shop = PetShop(random.choice([DogFactory, CatFactory])())
-    shop.show_pet()
+if __name__ == "__main__":
+
+    for i in range(3):
+        shop = PetShop(random.choice([DogFactory, CatFactory])())
+        shop.show_pet()
