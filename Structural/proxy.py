@@ -7,12 +7,16 @@ import time
 class SalesManager(object):
     def talk(self):
         print("Sales Manager ready to talk")
+    def meeting(self):
+        print("Sales Manager ready to meet")
+
 
 
 class Proxy(object):
     def __init__(self):
         self.busy = 'No'
         self.sales = None
+        self.is_boss = False
 
     def talk(self):
         print("Proxy checking for Sales Manager availability")
@@ -41,3 +45,5 @@ if __name__ == '__main__':
     p.talk()
     p.busy = 'Yes'
     p.talk()
+
+    # source: https://github.com/faif/python-patterns/blob/master/proxy.py

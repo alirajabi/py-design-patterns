@@ -31,3 +31,5 @@ def hello():
 
 if __name__ == '__main__':
     print('result:{}   name:{}   doc:{}'.format(hello(), hello.__name__, hello.__doc__))
+
+    # source: https://github.com/faif/python-patterns/blob/master/decorator.py
