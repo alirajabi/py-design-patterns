@@ -37,32 +37,32 @@ class LowAltitudeFlyingBehavior(FlyingBehavior):
         
 
 def main():
-    shotormorgh = Animal(UnableToFlyBehavior(), SprintBehavior())
-    oghab = Animal(LowAltitudeFlyingBehavior(), WalkingBehavior())
+    bird2 = Animal(UnableToFlyBehavior(), SprintBehavior())
+    bird1 = Animal(LowAltitudeFlyingBehavior(), WalkingBehavior())
 
-    print('shotormorgh tries to fly: ', shotormorgh.fly())
-    print('shotormorgh tries to run: ', shotormorgh.run())
+    print('bird2 tries to fly: ', bird2.fly())
+    print('bird2 tries to run: ', bird2.run())
     print('')
-    print('oghab tries to fly: ', oghab.fly())
-    print('oghab tries to run: ', oghab.run())
+    print('bird1 tries to fly: ', bird1.fly())
+    print('bird1 tries to run: ', bird1.run())
    
     print('')
 
-    print('oghab gets hit')
-    oghab.fly_behavior = UnableToFlyBehavior()
-    print('oghab tries to fly: ', oghab.fly())
-    print('oghab tries to run: ', oghab.run())
+    print('bird1 gets hit')
+    bird1.fly_behavior = UnableToFlyBehavior()
+    print('bird1 tries to fly: ', bird1.fly())
+    print('bird1 tries to run: ', bird1.run())
 
 # output:
-# shotormorgh tries to fly:  Not able to fly
-# shotormorgh tries to run:  sprint behavior: fast but energy consuming
+# bird2 tries to fly:  Not able to fly
+# bird2 tries to run:  sprint behavior: fast but energy consuming
 # 
-# oghab tries to fly:  Flying low: dangerous but less visible
-# oghab tries to run:  walk behavior: slow but energy preserving
+# bird1 tries to fly:  Flying low: dangerous but less visible
+# bird1 tries to run:  walk behavior: slow but energy preserving
 # 
-# oghab gets hit
-# oghab tries to fly:  Not able to fly
-# oghab tries to run:  walk behavior: slow but energy preserving
+# bird1 gets hit
+# bird1 tries to fly:  Not able to fly
+# bird1 tries to run:  walk behavior: slow but energy preserving
 
 
 if __name__ == '__main__':
