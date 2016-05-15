@@ -4,7 +4,6 @@
 
 # Director
 class Director(object):
-
     def __init__(self):
         self.builder = None
 
@@ -19,7 +18,6 @@ class Director(object):
 
 # Abstract Builder
 class Builder(object):
-
     def __init__(self):
         self.phone = None
 
@@ -35,7 +33,6 @@ class Builder(object):
 
 # Concrete Builder
 class ApplePhone(Builder):
-
     def build_screen(self):
         self.phone.screen = 'Retina Touch Screen 4.7 Inch!'
 
@@ -44,7 +41,6 @@ class ApplePhone(Builder):
 
 
 class SamsungPhone(Builder):
-
     def build_screen(self):
         self.phone.screen = 'Touch Screen 5.2 Inch!'
 
@@ -54,7 +50,6 @@ class SamsungPhone(Builder):
 
 # Product
 class Phone(object):
-
     def __init__(self):
         self.screen = None
         self.os = None
@@ -74,4 +69,3 @@ if __name__ == "__main__":
     director.construct_building()
     samsung = director.get_phone()
     print(samsung)
-
