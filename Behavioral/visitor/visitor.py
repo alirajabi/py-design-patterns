@@ -25,6 +25,9 @@ class AddNode(ExpressionTreeComposite):
         self.children.append(left_child)
         self.children.append(right_child)
 
+    def accept(self, visitor):
+        visitor.visit_binary_operator(self)
+
 
 class MultiplyNode(ExpressionTreeComposite):
 
@@ -32,6 +35,9 @@ class MultiplyNode(ExpressionTreeComposite):
         super().__init__('x')
         self.children.append(left_child)
         self.children.append(right_child)
+
+    def accept(self, visitor):
+        visitor.visit_binary_operator(self)
 
 
 class ExpressionTreeLeaf(ExpressionTreeComponent):
@@ -45,22 +51,22 @@ class NumberNode(ExpressionTreeLeaf):
     def __init__(self, value):
         super().__init__(value)
 
+    def accept(self, visitor):
+        visitor.visit_leaf(self)
+
 
 class DepthFirstTreeVisitor(object):
 
     def __init__(self):
         self.presistent_state = []
 
-    def visit(self, tree_node):
-        self.__dfs(tree_node)
+    def visit_leaf(self, tree_node):
+        self.presistent_state.append(tree_node.value)
 
-    def __dfs(self, tree_node):
-        if len(tree_node.children) == 0:
-            self.presistent_state.append(tree_node.value)
-        elif len(tree_node.children) == 2:
-            for child in tree_node.children:
-                child.accept(self)
-            self.presistent_state.append(tree_node.value)
+    def visit_binary_operator(self, tree_node):
+        for child in tree_node.children:
+            child.accept(self)
+        self.presistent_state.append(tree_node.value)
 
 
 def main():
