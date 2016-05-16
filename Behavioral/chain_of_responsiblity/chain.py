@@ -78,7 +78,7 @@ if __name__ == '__main__':
 # 18 : 15 coin sorter handles 18 coin
 # 21 : 20 coin sorter handles 21 coin
 # 24 : 20 coin sorter handles 24 coin
-# 
+#
 # 0 : None
 # 3 : None
 # 6 : None
