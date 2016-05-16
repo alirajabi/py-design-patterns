@@ -7,7 +7,7 @@ class Director(object):
     def __init__(self):
         self.builder = None
 
-    def construct_building(self):
+    def construct_phone(self):
         self.builder.new_phone()
         self.builder.build_screen()
         self.builder.build_os()
@@ -62,10 +62,10 @@ class Phone(object):
 if __name__ == "__main__":
     director = Director()
     director.builder = ApplePhone()
-    director.construct_building()
+    director.construct_phone()
     iphone = director.get_phone()
     print(iphone)
     director.builder = SamsungPhone()
-    director.construct_building()
+    director.construct_phone()
     samsung = director.get_phone()
     print(samsung)
