@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 
-class SystemdUnit():
+class SystemdUnit(object):
 
     def start(self):
         self.on_pre_start()
@@ -33,7 +33,7 @@ class MyUnit(SystemdUnit):
         print('setting up environment ...')
 
     def on_start(self):
-        print('running the executable with args:', *self.start_args)
+        print('running the executable with args:', self.start_args)
 
     def on_stop(self):
         print('stopping ...')

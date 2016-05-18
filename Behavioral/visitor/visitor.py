@@ -15,13 +15,13 @@ class ExpressionTreeComponent(object):
 class ExpressionTreeComposite(ExpressionTreeComponent):
 
     def __init__(self, value):
-        super().__init__(value)
+        super(ExpressionTreeComposite, self).__init__(value)
 
 
 class AddNode(ExpressionTreeComposite):
 
     def __init__(self, left_child, right_child):
-        super().__init__('+')
+        super(AddNode, self).__init__('+')
         self.children.append(left_child)
         self.children.append(right_child)
 
@@ -32,7 +32,7 @@ class AddNode(ExpressionTreeComposite):
 class MultiplyNode(ExpressionTreeComposite):
 
     def __init__(self, left_child, right_child):
-        super().__init__('x')
+        super(MultiplyNode, self).__init__('x')
         self.children.append(left_child)
         self.children.append(right_child)
 
@@ -43,13 +43,13 @@ class MultiplyNode(ExpressionTreeComposite):
 class ExpressionTreeLeaf(ExpressionTreeComponent):
 
     def __init__(self, value):
-        super().__init__(value)
+        super(ExpressionTreeLeaf, self).__init__(value)
 
 
 class NumberNode(ExpressionTreeLeaf):
 
     def __init__(self, value):
-        super().__init__(value)
+        super(NumberNode, self).__init__(value)
 
     def accept(self, visitor):
         visitor.visit_leaf(self)

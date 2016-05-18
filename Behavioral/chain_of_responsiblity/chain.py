@@ -33,15 +33,14 @@ class CoinRequest(object):
 class CoinSorter(Handler):
 
     def __init__(self, min_coin_size_to_catch):
-        super().__init__()
+        super(CoinSorter, self).__init__()
         self.min_coin_size = min_coin_size_to_catch
 
     def can_handle(self, request):
         return self.min_coin_size <= request.size()
 
     def _handle(self, request):
-        return '{} coin sorter handles {} coin\
-'.format(self.min_coin_size, request.size())
+        return '{} coin sorter handles {} coin'.format(self.min_coin_size, request.size())
 
 
 def main():
